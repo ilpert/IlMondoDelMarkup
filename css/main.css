@@ -1,0 +1,335 @@
+    html, body {
+	background:rgb(136, 230, 255);
+	padding:0;
+	margin:0;
+	overflow:hidden;
+    overflow-x :hidden;
+    overflow-y: hidden;
+	/*font-family: Arial, sans-serif;*/
+    font-family:nokia;
+}
+
+.deathfield {
+    position:absolute;
+    width:100%;
+    /*height:10px;*/
+    height:20px;
+    background:rgba(235, 221, 218, 1);
+    bottom:0px;
+    /*bottom:-3em;*/
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.3); /*dim the background*/
+ /*
+   background:     linear-gradient(
+      rgba(98, 113, 120, 0.5),
+      rgba(98, 113, 120, 0.5)
+    ),url('../images/pixeltexture.png') repeat;
+	opacity: 0.5;
+*/
+  display: none;
+}
+
+.hint {
+    display:none;
+}
+
+.right {
+    float:right;
+}
+
+.pointer {
+    cursor:pointer;
+    text-decoration:none;
+}
+.faded {
+    opacity:0.2;
+}
+
+div#endstory {
+	display:none;
+	overflow:visible;
+	font-family:nokia;
+	font-size:1.25em;
+	background:#fff;
+	opacity:0.90;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:100;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+
+div#story {
+	display:none;
+	overflow:visible;
+	font-family:nokia;
+	font-size:1.25em;
+	background:#fff;
+	opacity:0.90;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:100;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+.red {color: red;}
+.blue {color:blue;}
+.yellow {color:yellow;}
+.green {color:green;}
+
+div#story button {
+	display:none;
+	margin:0 auto;
+	border:0.5em solid black;
+	padding:1em;
+	background:#fff;
+	transform: rotate(-5deg);
+	font-family:nokia;
+	width:12em;
+}
+div#story button:active {
+	background:#000;
+	color:#fff;
+}
+
+div#story p {
+	overflow:visible;
+	font-weight:bold;
+}
+
+h1 {
+	font-size:2.5em;
+	text-shadow: 3px 3px #000;
+}
+
+.obstacle {
+    position: absolute;
+}
+
+.game-window{
+    width: 70%;
+    float: left;
+    /*min-height: 100px;*/
+}
+
+.command-window{
+    position:fixed;
+    top:0px;
+    left:10px;
+    opacity:1;
+    z-index:99;
+    color:black;
+    //height:200px;
+
+   width: 95%;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   font-size:12pt;
+   background-color:#A4A4A4;
+   border: 6px solid;
+   padding:10px;
+   text-align:left;
+   /*font-family:arial;*/
+   font-family:nokia;
+   font-smooth:never;
+   border: #000000 solid 6px;
+    background:     linear-gradient(
+      rgba(230, 230, 230, 0.8),
+      rgba(230, 230, 230, 0.8)
+    ),url('../images/pixeltexture.png') repeat;
+
+}
+
+.command-hint{
+    width: 100%;
+    height: 40%;
+}
+
+#htmlcommand{
+    height:100px;
+    max-height: 200px;
+    resize: vertical;
+}
+
+.command-box{
+    height: 40%;
+}
+
+.game-screen{
+    width: 100%;
+    margin: auto;
+}
+
+.wall {
+    background: linear-gradient(
+        rgba(215, 102, 54, 0.5),
+        rgba(215, 102, 54, 0.5)
+    ),url('../images/pixeltexture.png') repeat;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7);
+}
+.wallright {
+    color:black;
+    width:5em;
+    height:100%;
+    float:right;
+    right:-1em;
+
+}
+.wallleft {
+    color:black;
+    width:5em;
+    height:100%;
+    float:left;
+    left:-2em;
+    z-index: -1;
+}
+
+textarea {
+    border:2px solid black;
+    width: 100%;
+    font-size:1em;
+    font-weight:bold;
+}
+.levelplatform {
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7);
+    background:     linear-gradient(
+      rgba(13, 255, 0, 0.5),
+      rgba(13, 255, 0, 0.5)
+    ),url('../images/pixeltexture.png') repeat;
+}
+
+.platform {
+    width:200px;
+    height:20px;
+    position: absolute;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7);
+    background:     linear-gradient(
+      rgba(98, 113, 120, 0.5),
+      rgba(98, 113, 120, 0.5)
+    ),url('../images/pixeltexture.png') repeat;
+    z-index: -1;
+}
+
+.platform-no-bottom {
+    width:200px;
+    height:20px;
+    position: absolute;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7);
+    background:     linear-gradient(
+      rgba(20, 51, 255, 0.5),
+      rgba(20, 51, 255, 0.5)
+    ),url('../images/pixeltexture.png') repeat;
+    z-index: -1;
+}
+
+@keyframes marquee {
+  0% { left: 100%; }
+  100% { left: -100%; }
+}
+
+/*.cloudparent {
+    bottom:0px;
+    position: absolute;
+    animation: marquee 20s linear infinite;
+}
+
+.cloud {
+    box-shadow: 6px 6px 0px rgba(84, 84, 84, 0.7);
+    width:300px;
+    height:150px;
+    position: absolute;
+    background-color:white;
+    z-index: -5;
+}*/
+
+.btn {
+    font-family:nokia;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  /*font-family: Arial;*/
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: 2px solid black;
+  outline:none;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+}
+
+.button-container
+{
+    font-family:nokia;
+    cursor: pointer;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    opacity:1;
+    z-index:99;
+    color:white;
+    border: 6px solid black;
+    padding:4px;
+    width:32px;
+    height:32px;
+    background-color:white;
+}
+
+.tooltip {
+    font-family:nokia;
+    font-size: .5em;
+    background:#fff;
+    position: fixed; /** depends on how it handles the e.pageX and e.pageY **/
+    width: 120px;
+    background-color: white ;
+    /*opacity:0.90;*/
+    text-align: center;
+    border: 2px solid ;
+    border-color: black;
+    z-index: 10;
+    display: none; /**let the tooltip be not visable, when startup **/
+    padding-top: .35em;
+    padding-bottom: .35em;
+}
+
+@font-face {
+    font-family:  nokia;
+    src: url("../font/nokia.ttf");
+}
+
+a {
+    width:40px;
+    height:40px;
+    position: absolute;
+    background: url('../images/spiral.gif') no-repeat;
+    z-index: -1;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

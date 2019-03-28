@@ -1,0 +1,32 @@
+@keyframes upAndDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes upAndDownAlt {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes leftAndRight {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100px); }
+    100% { transform: translateX(0); }
+}
+
+.move-up-down {
+    animation: upAndDown 4s ease-in-out infinite ;
+    margin: 0px;
+}
+
+.move-up-down-alt {
+    animation: upAndDownAlt 4s ease-in-out infinite ;
+    margin: 0px;
+}
+
+.move-left-right {
+    animation: leftAndRight 4s ease-in-out infinite ;
+    margin: 0px;
+}

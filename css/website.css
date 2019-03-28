@@ -1,0 +1,157 @@
+body {
+    background:     linear-gradient(
+      rgba(98, 113, 120, 0.5),
+      rgba(98, 113, 120, 0.5)
+    ),url('../images/pixeltexture.png') repeat;
+    padding:0px;
+    margin:0px;
+    font-family:nokia;
+}
+
+@font-face {
+    font-family:  nokia;
+     src: url("../font/nokia.ttf");
+}
+
+h1 {
+	font-size:2.5em;
+	text-shadow: 3px 3px #000;
+}
+
+img {
+	padding-top: 20px;
+}
+
+/*#wrapper div, iframe {
+    float: left;
+}*/
+
+#left {
+
+}
+#right {
+    margin:10px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1400px) {
+    #right {
+        width:1024px;
+        display:block;
+    }
+}
+
+.red {color: red;}
+.blue {color:blue;}
+.yellow {color:yellow;}
+.green {color:green;}
+
+
+
+#game {
+  background: #aaa;
+  float: left;
+  margin:10px;
+  max-width:1024px;
+  min-width:1024px;
+  width:100%;
+  height:768px;
+  border:6px solid black;
+  padding:0px;
+  margin-bottom:50px;
+}
+
+textarea {
+  width:100%
+}
+
+.scrolling-div {
+  height:768px;
+  overflow:auto;
+}
+
+.suggestion-box{
+  opacity:1;
+  color:black;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-size:12pt;
+  background-color:white;
+  border: 6px solid;
+  padding:10px;
+  text-align:left;
+  font-family:nokia;
+  font-smooth:never;
+  border: #000000 solid 6px;
+}
+
+.btn {
+    font-family:nokia;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  /*font-family: Arial;*/
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: 2px solid black;
+  outline:none;
+}
+
+.help-window{
+  /*overflow: hidden;*/
+  opacity:1;
+  color:black;
+  overflow-x: hidden;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   font-size:12pt;
+   background-color:white;
+   border: 6px solid;
+   padding:10px;
+   text-align:left;
+   font-family:nokia;
+   font-smooth:never;
+   border: #000000 solid 6px;
+	width:auto;
+}
+
+.gallery-image {
+  max-width:100%;
+  /*margin:15px;*/
+  /*border: 6px solid black;*/
+}
+
+.gallery {
+  text-align:center;
+  padding-top:50px;
+}
+
+#bottom-left
+{
+ position:fixed;
+ bottom:0px;
+ left:5px;
+ opacity:1;
+ z-index:100;
+ max-width:600px;
+}
+
+.social li{
+    display:inline;
+    left:0px;
+    padding-left:0px;
+    margin-left:0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.fb-share-button{
+    position:relative;
+    top:-5px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+
+        <title>Super Markup World</title>
+
+        <meta charset='utf-8'>
+
+		<!--Search Engine Stuff -->
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta property="og:title" content="Super Markup World">
+		<meta property="og:site_name" content="Super Markup World">
+		
+		<link rel="image_src" href="http://supermarkupworld.com/images/splash.png" />
+		<meta property="og:image" content="http://supermarkupworld.com/images/splash.png">
+		<meta name="description" content="A platformer where you solve puzzles using HTML and CSS">
+		<meta property="og:description" content="A platformer where you solve puzzles using HTML and CSS">
+		<link rel="icon" type="image/png" href="favicon.ico">
+
+        <!-- CSS files -->
+        <link href='css/actors.css' rel='stylesheet'>
+        <link href='css/main.css' rel='stylesheet'>
+        <link href='css/hazards.css' rel='stylesheet'>
+        <link href='css/animations.css' rel='stylesheet'>
+
+        <!-- Levels -->
+        <link rel='import' href='levels/level0.html'>
+        <link rel='import' href='levels/level1.html'>
+        <link rel='import' href='levels/level2.html'>
+        <link rel='import' href='levels/level3.html'>
+        <link rel='import' href='levels/level4.html'>
+        <link rel='import' href='levels/level5.html'>
+        <link rel='import' href='levels/level6.html'>
+        <link rel='import' href='levels/level7.html'>
+        <link rel='import' href='levels/level8.html'>
+
+		<!-- For firefox! -->
+        <script src='js/webcomponentsjs/webcomponents.js'></script>
+		
+        <!-- Javascripts -->
+        <script src='js/jquery-1.12.0.min.js'></script>
+        <script src='js/jquery-collision.min.js'></script>
+        <script src='js/watchjs/src/watch.min.js'></script>
+		<script src='js/collisions.js'></script>
+        <script>
+            // Globals.
+            var guy, playable = false,
+                stats = {
+                    level: null
+                },
+				story = [
+					'Pixel e Pixella vivono nel Mondo Super Markup, creato dal grande architetto Markup Polo.',
+					'In una bella giornata di sole in cui Pixel e Pixella hanno visitato la regione montuosa del Divland ...',
+					'...il malvagio architetto Mosiac è crollato tutte le montagne <br>Pixella in qualche modo eluso il disastro utilizzando un tag hyperlink.',
+					'Ma ora Pixel e Pixella sono separati!',
+					'Sta a te, Pixel, trovare Pixella e salvare Divland.'
+				];
+            $(function () {
+                guy = $('#guy');
+            });
+        </script>
+
+        <script src='js/input.js'></script>
+        <script src='js/game.js'></script>
+        <script src='js/engine.js'></script>
+
+    </head>
+    <body>
+
+		<div id='story'>
+			<h1>
+				<span class='blue'>S</span><span class='red'>u</span><span class='yellow'>p</span><span class='green'>e</span><span class='blue'>r </span> <span class='red'>M</span><span class='green'>a</span><span class='yellow'>r</span><span class='red'>k</span><span class='blue'>u</span><span class='green'>p</span> <span class='yellow'>W</span><span class='red'>o</span><span class='blue'>r</span><span class='green'>l</span><span class='yellow'>d</span>
+			</h1>
+			<div id='storyText'></div>
+			<button type='button'>OK</button>
+		</div>
+
+        <div id='endstory'>
+            <h1>Ce l'hai fatta!</h1>
+            <div><img src="images/player_big.gif" style="width:200px;height:200px"><img src="images/friend_big2.gif" style="margin-left:20px;width:200px;height:200px"></div>
+            <div>Congratulazioni, non solo hai salvato il tuo amico, ma hai anche imparato alcune preziose abilità lungo il percorso.</div>
+            <br><br>
+            <div>Refresh the page to play again!</div>
+        </div>
+
+        <div class='collider' id='guy'>
+            <div class='collider' id='horizontalCollider' style='width: 32px; height: 31px;'></div>
+            <div id="speech-bubble">
+                <div id='speech-bubble-text'></div>
+                <span id='speech-bubble-prev' class='pointer faded no-select'>&lt; prev</span> |
+                <span id='speech-bubble-next' class='pointer no-select'>next &gt;</span>
+                <span id='speech-bubble-close' class='pointer faded right no-select'>X</span>
+            </div>
+        </div>
+
+        <div class='game-window'></div>
+
+        <div class='game-border'>
+            <div class='obstacle wall wallright'></div>
+            <div class='obstacle wall wallleft'></div>
+            <div class='obstacle water deathfield'>
+
+                <!-- <div class='obstacle lava' style='z-index:-2;bottom:320px;left:300px'> -->
+                <!-- <div class='deathfield' style='background-color:green;bottom:-10px;left:30px;width:170px;'></div> -->
+            </div>
+        </div>
+        <div id='sandbox'></div>
+
+        <div class='command-window'>
+            <div class='command-hint'>Finestra dei comandi HTML</div>
+            <div class='command-box'>
+                <textarea id='htmlcommand' rows="5" spellcheck="false"> &lt;div style='left:300px;bottom:100px'&gt;&lt;/div&gt;</textarea>
+                <button id='update' class='btn' type='button'>Crea</button>
+            </div>
+        </div>
+
+        <!-- audio-->
+
+        <audio id="add_div">
+            <source src="sounds/add_div.wav" volume=".1">
+        </audio>
+        <audio id="jump">
+            <source src="sounds/jump.wav" volume="0.1">
+        </audio>
+        <audio id="default">
+            <source src="sounds/default.wav" volume=".1">
+        </audio>
+        <audio id="death">
+            <source src="sounds/death.wav" volume=".1">
+        </audio>
+        <audio id="next_level">
+            <source src="sounds/next_level.wav" volume=".1">
+        </audio>
+        <audio id="thud">
+            <source src="sounds/thud.wav" volume=".1">
+        </audio>
+        <audio id="pickup">
+            <source src="sounds/pickup.wav" volume=".1">
+        </audio>
+
+
+
+        
+        <div class="tooltip">Tooltip</div>
+    </body>
+
+</html>
